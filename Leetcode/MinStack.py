@@ -13,8 +13,9 @@ class MinStack:
             if self.min <= val:
                 self.minStack.append(val)
             else:
-                self.minStack.append(2*self.min -self.minStack[-1])
+                self.minStack.append(2*val -self.min)
                 self.min = val
+       
         
 
     def pop(self) -> None:
@@ -24,6 +25,7 @@ class MinStack:
             else:
                 self.min = 2*self.min -self.minStack[-1]
                 self.minStack.pop()
+      
         
         
 
