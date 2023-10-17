@@ -1,3 +1,4 @@
+#1
 class Solution:
     def search(self, nums: List[int], target: int) -> bool:
         low, high = 0, len(nums)-1
@@ -20,3 +21,7 @@ class Solution:
                 else:
                     high = mid - 1
         return False
+#2
+class Solution:
+    def search(self, nums: List[int], target: int) -> bool:
+        return True if target in nums else False 
