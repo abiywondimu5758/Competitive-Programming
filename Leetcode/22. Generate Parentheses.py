@@ -9,3 +9,6 @@ class Solution:
             if right < left:
                 backtrack(s + ')', left, right + 1)
 
+        valid_parentheses = []
+        backtrack()
+        return valid_parentheses
