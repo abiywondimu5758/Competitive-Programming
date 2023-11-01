@@ -22,3 +22,17 @@ class Solution:
             if root.left:
                 stack.append((root.left,currentsum))
         return totalsum
+        
+# Recursive
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        def sum(root,currentsum):
+            if not root:
+                return 0
+            currentsum = currentsum*10 + root.val
+            if not root.left and not root.right:
+                return currentsum
+            x = sum(root.left,currentsum)
+            y = sum(root.right,currentsum)
+            return x+y
+        return sum(root,0)
