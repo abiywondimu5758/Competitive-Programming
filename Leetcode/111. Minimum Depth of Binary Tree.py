@@ -21,3 +21,15 @@ class Solution:
             if root.right:
                 stack.append((root.right,depth + 1))
         return minDepth 
+
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        def md(root):
+            if not root:
+                return 0
+            left = md(root.left)
+            right = md(root.right)
+            if not left or not right:
+                return max(left, right) + 1
+            return min(left,right) + 1
+        return md(root)
