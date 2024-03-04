@@ -23,6 +23,18 @@ var topKFrequent = function(nums, k) {
         result.push(...buckets[i]);
     }
     return result;
-    // return Object.entries(map).sort((a,b)=> b[1]-a[1]).slice(0,k).map(([key,value])=>parseInt(key))
 
 };
+
+O(nlogn) time
+var topKFrequent = function(nums, k) {
+    let map = new Map()
+
+    for(let num of nums){
+        map.set(num, (map.get(num) || 0) +1)
+    }
+
+    return Object.entries(map).sort((a,b)=> b[1]-a[1]).slice(0,k).map(([key,value])=>parseInt(key))
+
+};
+
