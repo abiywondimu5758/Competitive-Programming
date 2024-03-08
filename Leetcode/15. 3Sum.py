@@ -26,3 +26,33 @@ class Solution:
                     k -= 1
 
         return ls
+
+
+
+# JS
+# var threeSum = function(nums) {
+#     let arr = [];
+#     nums.sort((a,b)=>a-b);
+
+#     for (let i = 0; i < nums.length - 2; i++) {
+#         if (i === 0 || nums[i] !== nums[i - 1]) {
+#             let pointer1 = i + 1;
+#             let pointer2 = nums.length - 1;
+#             while (pointer1 < pointer2) {
+#                 let sum = nums[i] + nums[pointer1] + nums[pointer2];
+#                 if (sum === 0) {
+#                     arr.push([nums[i], nums[pointer1], nums[pointer2]]);
+#                     while (pointer1 < pointer2 && nums[pointer1] === nums[pointer1 + 1]) pointer1++;
+#                     while (pointer1 < pointer2 && nums[pointer2] === nums[pointer2 - 1]) pointer2--;
+#                     pointer1++;
+#                     pointer2--;
+#                 } else if (sum < 0) {
+#                     pointer1++;
+#                 } else {
+#                     pointer2--;
+#                 }
+#             }
+#         }
+#     }
+#     return arr;
+# };
